@@ -1,6 +1,6 @@
 package statisticker;
 
-//import jdk.nashorn.internal.AssertsEnabled;
+import jdk.nashorn.internal.AssertsEnabled;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -9,7 +9,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Test;
-
 public class StatisticsTest {
 
   @Test
@@ -21,6 +20,7 @@ public class StatisticsTest {
     assertEquals(s.average, 4.525f, epsilon);
     assertEquals(s.min, 1.5f, epsilon);
     assertEquals(s.max, 8.9f, epsilon);
+    
   }
 
   @Test
