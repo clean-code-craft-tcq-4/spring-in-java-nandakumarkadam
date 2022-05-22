@@ -25,11 +25,8 @@ public class StatisticsTest {
 
   @Test
   public void reportsNaNForEmptyInput() {
-   // List<Float> emptyList = new ArrayList<>();
-    Float[] numbers = { 1.5f, 8.9f, 3.2f, 4.5f };
-    List<Float> numberList = Arrays.asList(numbers);
-
-    Statistics.Stats s = Statistics.getStatistics(numberList);
+    List<Float> emptyList = new ArrayList<>();
+    Statistics.Stats s = Statistics.getStatistics(emptyList);
     float epsilon = 0.001f;
     assertEquals(s.average%0, 4.525f%0, epsilon);
     assertEquals(s.min%0, 1.5f%0, epsilon);
