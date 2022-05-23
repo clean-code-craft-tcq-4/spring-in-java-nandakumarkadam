@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Test;
+
 public class StatisticsTest {
 
   @Test
@@ -20,7 +21,7 @@ public class StatisticsTest {
     assertEquals(s.average, 4.525f, epsilon);
     assertEquals(s.min, 1.5f, epsilon);
     assertEquals(s.max, 8.9f, epsilon);
-    
+
   }
 
   @Test
@@ -28,9 +29,9 @@ public class StatisticsTest {
     List<Float> emptyList = new ArrayList<>();
     Statistics.Stats s = Statistics.getStatistics(emptyList);
     float epsilon = 0.001f;
-    assertEquals(s.average%0, 4.525f%0, epsilon);
-    assertEquals(s.min%0, 1.5f%0, epsilon);
-    assertEquals(s.max%0, 8.9f%0, epsilon);
+    assertEquals(s.average % 0, 4.525f % 0, epsilon);
+    assertEquals(s.min % 0, 1.5f % 0, epsilon);
+    assertEquals(s.max % 0, 8.9f % 0, epsilon);
     // All fields of computedStats (average, max, min) must be
     // Float.NaN (not-a-number), as described in
     // https://www.geeksforgeeks.org/nan-not-number-java/
@@ -41,11 +42,10 @@ public class StatisticsTest {
   public void reportsAlertsIfMaxIsMoreThanThreshold() {
     EmailAlert emailAlerter = new EmailAlert();
     LEDAlert ledAlerter = new LEDAlert();
-    IAlerter[] alerters = new IAlerter[] { new IAlerter(emailAlerter, ledAlerter) };
-    float maxThreshold = 10.2f;
+    IAlerter alerters = new IAlerter(emailAlerter, ledAlerter);
+    float maxThreshold = 12.2f;
     StatsChecker checker = new StatsChecker(maxThreshold, alerters);
     Float[] numbers = { 11.5f, 6.9f, 7.5f, 6.6f };
-    List<Float> numberList = Arrays.asList(numbers);
     checker.checkAndAlert(numbers);
     assertTrue(emailAlerter.emailSent);
     assertTrue(ledAlerter.ledGlows);

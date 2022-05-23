@@ -1,13 +1,22 @@
+
 package statisticker;
+
 
 public class IAlerter {
 
-  public LEDAlert ledAlert;
-  public EmailAlert emailAlert;
+  /**
+   * @param emailAlerter
+   * @param ledAlerter
+   */
 
-  public IAlerter(EmailAlert emailAlert, LEDAlert ledAlert) {
-    this.emailAlert = emailAlert;
-    this.ledAlert = ledAlert;
+  public EmailAlert emailAlert;
+  public LEDAlert ledAlert;
+
+  public IAlerter(EmailAlert emailAlerter, LEDAlert ledAlerter) {
+    // TODO Auto-generated constructor stub
+    this.emailAlert = emailAlerter;
+    this.ledAlert = ledAlerter;
   }
+
+  
 }
-   

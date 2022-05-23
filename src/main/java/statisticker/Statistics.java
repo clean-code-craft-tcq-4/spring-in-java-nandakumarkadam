@@ -22,9 +22,10 @@ public class Statistics {
   }
 
   public static class Stats {
+
     public static float average;
     public static float min;
     public static float max;
-    }
   }
+}
 
